@@ -1,0 +1,1 @@
+export { default } from "file:///home/luca-alin/Desktop/ChatApp/chat-app/node_modules/@nuxt/vite-builder/dist/runtime/vite-node.mjs"

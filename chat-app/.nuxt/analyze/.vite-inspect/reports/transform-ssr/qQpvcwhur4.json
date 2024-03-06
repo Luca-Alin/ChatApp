@@ -1,0 +1,254 @@
+{
+  "resolvedId": "/home/luca-alin/Desktop/ChatApp/chat-app/node_modules/vuetify/lib/util/color/APCA.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/**\n * WCAG 3.0 APCA perceptual contrast algorithm from https://github.com/Myndex/SAPC-APCA\n * @licence https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document\n * @see https://www.w3.org/WAI/GL/task-forces/silver/wiki/Visual_Contrast_of_Text_Subgroup\n */\n// Types\n\n// MAGICAL NUMBERS\n\n// sRGB Conversion to Relative Luminance (Y)\n\n// Transfer Curve (aka \"Gamma\") for sRGB linearization\n// Simple power curve vs piecewise described in docs\n// Essentially, 2.4 best models actual display\n// characteristics in combination with the total method\nconst mainTRC = 2.4;\nconst Rco = 0.2126729; // sRGB Red Coefficient (from matrix)\nconst Gco = 0.7151522; // sRGB Green Coefficient (from matrix)\nconst Bco = 0.0721750; // sRGB Blue Coefficient (from matrix)\n\n// For Finding Raw SAPC Contrast from Relative Luminance (Y)\n\n// Constants for SAPC Power Curve Exponents\n// One pair for normal text, and one for reverse\n// These are the \"beating heart\" of SAPC\nconst normBG = 0.55;\nconst normTXT = 0.58;\nconst revTXT = 0.57;\nconst revBG = 0.62;\n\n// For Clamping and Scaling Values\n\nconst blkThrs = 0.03; // Level that triggers the soft black clamp\nconst blkClmp = 1.45; // Exponent for the soft black clamp curve\nconst deltaYmin = 0.0005; // Lint trap\nconst scaleBoW = 1.25; // Scaling for dark text on light\nconst scaleWoB = 1.25; // Scaling for light text on dark\nconst loConThresh = 0.078; // Threshold for new simple offset scale\nconst loConFactor = 12.82051282051282; // = 1/0.078,\nconst loConOffset = 0.06; // The simple offset\nconst loClip = 0.001; // Output clip (lint trap #2)\n\nexport function APCAcontrast(text, background) {\n  // Linearize sRGB\n  const Rtxt = (text.r / 255) ** mainTRC;\n  const Gtxt = (text.g / 255) ** mainTRC;\n  const Btxt = (text.b / 255) ** mainTRC;\n  const Rbg = (background.r / 255) ** mainTRC;\n  const Gbg = (background.g / 255) ** mainTRC;\n  const Bbg = (background.b / 255) ** mainTRC;\n\n  // Apply the standard coefficients and sum to Y\n  let Ytxt = Rtxt * Rco + Gtxt * Gco + Btxt * Bco;\n  let Ybg = Rbg * Rco + Gbg * Gco + Bbg * Bco;\n\n  // Soft clamp Y when near black.\n  // Now clamping all colors to prevent crossover errors\n  if (Ytxt <= blkThrs) Ytxt += (blkThrs - Ytxt) ** blkClmp;\n  if (Ybg <= blkThrs) Ybg += (blkThrs - Ybg) ** blkClmp;\n\n  // Return 0 Early for extremely low ∆Y (lint trap #1)\n  if (Math.abs(Ybg - Ytxt) < deltaYmin) return 0.0;\n\n  // SAPC CONTRAST\n\n  let outputContrast; // For weighted final values\n  if (Ybg > Ytxt) {\n    // For normal polarity, black text on white\n    // Calculate the SAPC contrast value and scale\n\n    const SAPC = (Ybg ** normBG - Ytxt ** normTXT) * scaleBoW;\n\n    // NEW! SAPC SmoothScale™\n    // Low Contrast Smooth Scale Rollout to prevent polarity reversal\n    // and also a low clip for very low contrasts (lint trap #2)\n    // much of this is for very low contrasts, less than 10\n    // therefore for most reversing needs, only loConOffset is important\n    outputContrast = SAPC < loClip ? 0.0 : SAPC < loConThresh ? SAPC - SAPC * loConFactor * loConOffset : SAPC - loConOffset;\n  } else {\n    // For reverse polarity, light text on dark\n    // WoB should always return negative value.\n\n    const SAPC = (Ybg ** revBG - Ytxt ** revTXT) * scaleWoB;\n    outputContrast = SAPC > -loClip ? 0.0 : SAPC > -loConThresh ? SAPC - SAPC * loConFactor * loConOffset : SAPC + loConOffset;\n  }\n  return outputContrast * 100;\n}\n//# sourceMappingURL=APCA.mjs.map",
+      "start": 1709266294681,
+      "end": 1709266295471,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709266295471,
+      "end": 1709266295471,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709266295471,
+      "end": 1709266295471,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709266295471,
+      "end": 1709266295471,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709266295471,
+      "end": 1709266295471,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709266295471,
+      "end": 1709266295471,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709266295471,
+      "end": 1709266295471,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709266295471,
+      "end": 1709266295471,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709266295471,
+      "end": 1709266295471,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709266295471,
+      "end": 1709266295471,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709266295471,
+      "end": 1709266295471,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709266295471,
+      "end": 1709266295471,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709266295471,
+      "end": 1709266295471,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709266295471,
+      "end": 1709266295471,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709266295471,
+      "end": 1709266295471,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709266295471,
+      "end": 1709266295471,
+      "order": "normal"
+    },
+    {
+      "name": "vuetify:import",
+      "start": 1709266295471,
+      "end": 1709266295471,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709266295471,
+      "end": 1709266295471,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709266295471,
+      "end": 1709266295471,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709266295471,
+      "end": 1709266295471,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "result": "const mainTRC = 2.4;\nconst Rco = 0.2126729;\nconst Gco = 0.7151522;\nconst Bco = 0.072175;\nconst normBG = 0.55;\nconst normTXT = 0.58;\nconst revTXT = 0.57;\nconst revBG = 0.62;\nconst blkThrs = 0.03;\nconst blkClmp = 1.45;\nconst deltaYmin = 5e-4;\nconst scaleBoW = 1.25;\nconst scaleWoB = 1.25;\nconst loConThresh = 0.078;\nconst loConFactor = 12.82051282051282;\nconst loConOffset = 0.06;\nconst loClip = 1e-3;\nexport function APCAcontrast(text, background) {\n  const Rtxt = (text.r / 255) ** mainTRC;\n  const Gtxt = (text.g / 255) ** mainTRC;\n  const Btxt = (text.b / 255) ** mainTRC;\n  const Rbg = (background.r / 255) ** mainTRC;\n  const Gbg = (background.g / 255) ** mainTRC;\n  const Bbg = (background.b / 255) ** mainTRC;\n  let Ytxt = Rtxt * Rco + Gtxt * Gco + Btxt * Bco;\n  let Ybg = Rbg * Rco + Gbg * Gco + Bbg * Bco;\n  if (Ytxt <= blkThrs)\n    Ytxt += (blkThrs - Ytxt) ** blkClmp;\n  if (Ybg <= blkThrs)\n    Ybg += (blkThrs - Ybg) ** blkClmp;\n  if (Math.abs(Ybg - Ytxt) < deltaYmin)\n    return 0;\n  let outputContrast;\n  if (Ybg > Ytxt) {\n    const SAPC = (Ybg ** normBG - Ytxt ** normTXT) * scaleBoW;\n    outputContrast = SAPC < loClip ? 0 : SAPC < loConThresh ? SAPC - SAPC * loConFactor * loConOffset : SAPC - loConOffset;\n  } else {\n    const SAPC = (Ybg ** revBG - Ytxt ** revTXT) * scaleWoB;\n    outputContrast = SAPC > -loClip ? 0 : SAPC > -loConThresh ? SAPC - SAPC * loConFactor * loConOffset : SAPC + loConOffset;\n  }\n  return outputContrast * 100;\n}\n",
+      "start": 1709266295471,
+      "end": 1709266295474,
+      "order": "normal",
+      "sourcemaps": "{\n  \"version\": 3,\n  \"sources\": [\"/home/luca-alin/Desktop/ChatApp/chat-app/node_modules/vuetify/lib/util/color/APCA.mjs\"],\n  \"sourcesContent\": [\"/**\\n * WCAG 3.0 APCA perceptual contrast algorithm from https://github.com/Myndex/SAPC-APCA\\n * @licence https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document\\n * @see https://www.w3.org/WAI/GL/task-forces/silver/wiki/Visual_Contrast_of_Text_Subgroup\\n */\\n// Types\\n\\n// MAGICAL NUMBERS\\n\\n// sRGB Conversion to Relative Luminance (Y)\\n\\n// Transfer Curve (aka \\\"Gamma\\\") for sRGB linearization\\n// Simple power curve vs piecewise described in docs\\n// Essentially, 2.4 best models actual display\\n// characteristics in combination with the total method\\nconst mainTRC = 2.4;\\nconst Rco = 0.2126729; // sRGB Red Coefficient (from matrix)\\nconst Gco = 0.7151522; // sRGB Green Coefficient (from matrix)\\nconst Bco = 0.0721750; // sRGB Blue Coefficient (from matrix)\\n\\n// For Finding Raw SAPC Contrast from Relative Luminance (Y)\\n\\n// Constants for SAPC Power Curve Exponents\\n// One pair for normal text, and one for reverse\\n// These are the \\\"beating heart\\\" of SAPC\\nconst normBG = 0.55;\\nconst normTXT = 0.58;\\nconst revTXT = 0.57;\\nconst revBG = 0.62;\\n\\n// For Clamping and Scaling Values\\n\\nconst blkThrs = 0.03; // Level that triggers the soft black clamp\\nconst blkClmp = 1.45; // Exponent for the soft black clamp curve\\nconst deltaYmin = 0.0005; // Lint trap\\nconst scaleBoW = 1.25; // Scaling for dark text on light\\nconst scaleWoB = 1.25; // Scaling for light text on dark\\nconst loConThresh = 0.078; // Threshold for new simple offset scale\\nconst loConFactor = 12.82051282051282; // = 1/0.078,\\nconst loConOffset = 0.06; // The simple offset\\nconst loClip = 0.001; // Output clip (lint trap #2)\\n\\nexport function APCAcontrast(text, background) {\\n  // Linearize sRGB\\n  const Rtxt = (text.r / 255) ** mainTRC;\\n  const Gtxt = (text.g / 255) ** mainTRC;\\n  const Btxt = (text.b / 255) ** mainTRC;\\n  const Rbg = (background.r / 255) ** mainTRC;\\n  const Gbg = (background.g / 255) ** mainTRC;\\n  const Bbg = (background.b / 255) ** mainTRC;\\n\\n  // Apply the standard coefficients and sum to Y\\n  let Ytxt = Rtxt * Rco + Gtxt * Gco + Btxt * Bco;\\n  let Ybg = Rbg * Rco + Gbg * Gco + Bbg * Bco;\\n\\n  // Soft clamp Y when near black.\\n  // Now clamping all colors to prevent crossover errors\\n  if (Ytxt <= blkThrs) Ytxt += (blkThrs - Ytxt) ** blkClmp;\\n  if (Ybg <= blkThrs) Ybg += (blkThrs - Ybg) ** blkClmp;\\n\\n  // Return 0 Early for extremely low ∆Y (lint trap #1)\\n  if (Math.abs(Ybg - Ytxt) < deltaYmin) return 0.0;\\n\\n  // SAPC CONTRAST\\n\\n  let outputContrast; // For weighted final values\\n  if (Ybg > Ytxt) {\\n    // For normal polarity, black text on white\\n    // Calculate the SAPC contrast value and scale\\n\\n    const SAPC = (Ybg ** normBG - Ytxt ** normTXT) * scaleBoW;\\n\\n    // NEW! SAPC SmoothScale™\\n    // Low Contrast Smooth Scale Rollout to prevent polarity reversal\\n    // and also a low clip for very low contrasts (lint trap #2)\\n    // much of this is for very low contrasts, less than 10\\n    // therefore for most reversing needs, only loConOffset is important\\n    outputContrast = SAPC < loClip ? 0.0 : SAPC < loConThresh ? SAPC - SAPC * loConFactor * loConOffset : SAPC - loConOffset;\\n  } else {\\n    // For reverse polarity, light text on dark\\n    // WoB should always return negative value.\\n\\n    const SAPC = (Ybg ** revBG - Ytxt ** revTXT) * scaleWoB;\\n    outputContrast = SAPC > -loClip ? 0.0 : SAPC > -loConThresh ? SAPC - SAPC * loConFactor * loConOffset : SAPC + loConOffset;\\n  }\\n  return outputContrast * 100;\\n}\\n//# sourceMappingURL=APCA.mjs.map\"],\n  \"mappings\": \"AAeA,MAAM,UAAU;AAChB,MAAM,MAAM;AACZ,MAAM,MAAM;AACZ,MAAM,MAAM;AAOZ,MAAM,SAAS;AACf,MAAM,UAAU;AAChB,MAAM,SAAS;AACf,MAAM,QAAQ;AAId,MAAM,UAAU;AAChB,MAAM,UAAU;AAChB,MAAM,YAAY;AAClB,MAAM,WAAW;AACjB,MAAM,WAAW;AACjB,MAAM,cAAc;AACpB,MAAM,cAAc;AACpB,MAAM,cAAc;AACpB,MAAM,SAAS;AAER,gBAAS,aAAa,MAAM,YAAY;AAE7C,QAAM,QAAQ,KAAK,IAAI,QAAQ;AAC/B,QAAM,QAAQ,KAAK,IAAI,QAAQ;AAC/B,QAAM,QAAQ,KAAK,IAAI,QAAQ;AAC/B,QAAM,OAAO,WAAW,IAAI,QAAQ;AACpC,QAAM,OAAO,WAAW,IAAI,QAAQ;AACpC,QAAM,OAAO,WAAW,IAAI,QAAQ;AAGpC,MAAI,OAAO,OAAO,MAAM,OAAO,MAAM,OAAO;AAC5C,MAAI,MAAM,MAAM,MAAM,MAAM,MAAM,MAAM;AAIxC,MAAI,QAAQ;AAAS,aAAS,UAAU,SAAS;AACjD,MAAI,OAAO;AAAS,YAAQ,UAAU,QAAQ;AAG9C,MAAI,KAAK,IAAI,MAAM,IAAI,IAAI;AAAW,WAAO;AAI7C,MAAI;AACJ,MAAI,MAAM,MAAM;AAId,UAAM,QAAQ,OAAO,SAAS,QAAQ,WAAW;AAOjD,qBAAiB,OAAO,SAAS,IAAM,OAAO,cAAc,OAAO,OAAO,cAAc,cAAc,OAAO;AAAA,EAC/G,OAAO;AAIL,UAAM,QAAQ,OAAO,QAAQ,QAAQ,UAAU;AAC/C,qBAAiB,OAAO,CAAC,SAAS,IAAM,OAAO,CAAC,cAAc,OAAO,OAAO,cAAc,cAAc,OAAO;AAAA,EACjH;AACA,SAAO,iBAAiB;AAC1B;\",\n  \"names\": []\n}\n"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709266295474,
+      "end": 1709266295474,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709266295474,
+      "end": 1709266295474,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709266295474,
+      "end": 1709266295474,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709266295474,
+      "end": 1709266295474,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709266295475,
+      "end": 1709266295475,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709266295475,
+      "end": 1709266295475,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709266295475,
+      "end": 1709266295475,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709266295475,
+      "end": 1709266295475,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709266295475,
+      "end": 1709266295475,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709266295475,
+      "end": 1709266295475,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709266295475,
+      "end": 1709266295475,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709266295475,
+      "end": 1709266295475,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709266295475,
+      "end": 1709266295475,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709266295475,
+      "end": 1709266295475,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709266295475,
+      "end": 1709266295475,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1709266295475,
+      "end": 1709266295475,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709266295475,
+      "end": 1709266295475,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709266295478,
+      "end": 1709266295478,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709266295478,
+      "end": 1709266295478,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709266295478,
+      "end": 1709266295478,
+      "order": "normal"
+    }
+  ]
+}
