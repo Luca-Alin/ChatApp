@@ -1,0 +1,254 @@
+{
+  "resolvedId": "/home/luca-alin/Desktop/ChatApp/chat-app/node_modules/vuetify/lib/util/globals.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "export const IN_BROWSER = typeof window !== 'undefined';\nexport const SUPPORTS_INTERSECTION = IN_BROWSER && 'IntersectionObserver' in window;\nexport const SUPPORTS_TOUCH = IN_BROWSER && ('ontouchstart' in window || window.navigator.maxTouchPoints > 0);\nexport const SUPPORTS_EYE_DROPPER = IN_BROWSER && 'EyeDropper' in window;\n//# sourceMappingURL=globals.mjs.map",
+      "start": 1709266293815,
+      "end": 1709266294668,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709266294668,
+      "end": 1709266294668,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709266294668,
+      "end": 1709266294668,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709266294668,
+      "end": 1709266294668,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709266294668,
+      "end": 1709266294668,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709266294668,
+      "end": 1709266294668,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709266294668,
+      "end": 1709266294668,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1709266294668,
+      "end": 1709266294668,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1709266294668,
+      "end": 1709266294668,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709266294668,
+      "end": 1709266294668,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709266294668,
+      "end": 1709266294668,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709266294668,
+      "end": 1709266294668,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709266294668,
+      "end": 1709266294668,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709266294668,
+      "end": 1709266294668,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709266294668,
+      "end": 1709266294668,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709266294668,
+      "end": 1709266294668,
+      "order": "normal"
+    },
+    {
+      "name": "vuetify:import",
+      "start": 1709266294668,
+      "end": 1709266294668,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709266294668,
+      "end": 1709266294668,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709266294668,
+      "end": 1709266294668,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709266294668,
+      "end": 1709266294668,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "result": "export const IN_BROWSER = false;\nexport const SUPPORTS_INTERSECTION = IN_BROWSER && \"IntersectionObserver\" in void 0;\nexport const SUPPORTS_TOUCH = IN_BROWSER && (\"ontouchstart\" in void 0 || (void 0).navigator.maxTouchPoints > 0);\nexport const SUPPORTS_EYE_DROPPER = IN_BROWSER && \"EyeDropper\" in void 0;\n",
+      "start": 1709266294668,
+      "end": 1709266294683,
+      "order": "normal",
+      "sourcemaps": "{\n  \"version\": 3,\n  \"sources\": [\"/home/luca-alin/Desktop/ChatApp/chat-app/node_modules/vuetify/lib/util/globals.mjs\"],\n  \"sourcesContent\": [\"export const IN_BROWSER = typeof window !== 'undefined';\\nexport const SUPPORTS_INTERSECTION = IN_BROWSER && 'IntersectionObserver' in window;\\nexport const SUPPORTS_TOUCH = IN_BROWSER && ('ontouchstart' in window || window.navigator.maxTouchPoints > 0);\\nexport const SUPPORTS_EYE_DROPPER = IN_BROWSER && 'EyeDropper' in window;\\n//# sourceMappingURL=globals.mjs.map\"],\n  \"mappings\": \"AAAO,aAAM,aAAa;AACnB,aAAM,wBAAwB,cAAc,0BAA0B;AACtE,aAAM,iBAAiB,eAAe,kBAAkB,UAAU,SAAO,UAAU,iBAAiB;AACpG,aAAM,uBAAuB,cAAc,gBAAgB;\",\n  \"names\": []\n}\n"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709266294683,
+      "end": 1709266294683,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709266294683,
+      "end": 1709266294683,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709266294683,
+      "end": 1709266294684,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709266294684,
+      "end": 1709266294684,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709266294684,
+      "end": 1709266294684,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709266294684,
+      "end": 1709266294684,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709266294684,
+      "end": 1709266294684,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709266294684,
+      "end": 1709266294684,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709266294684,
+      "end": 1709266294684,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709266294684,
+      "end": 1709266294684,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1709266294684,
+      "end": 1709266294684,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709266294684,
+      "end": 1709266294684,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709266294684,
+      "end": 1709266294684,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709266294684,
+      "end": 1709266294684,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709266294684,
+      "end": 1709266294684,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1709266294684,
+      "end": 1709266294684,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709266294684,
+      "end": 1709266294684,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709266294684,
+      "end": 1709266294684,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709266294684,
+      "end": 1709266294684,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709266294684,
+      "end": 1709266294684,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,237 @@
+{
+  "resolvedId": "/home/luca-alin/Desktop/ChatApp/chat-app/plugins/vuetify.ts",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import \"@mdi/font/css/materialdesignicons.css\";\n\nimport \"vuetify/styles\";\nimport {createVuetify} from \"vuetify\";\n\nexport default defineNuxtPlugin((app) => {\n    const vuetify = createVuetify({\n      ssr: true\n    });\n    app.vueApp.use(vuetify);\n});\n",
+      "start": 1709266290201,
+      "end": 1709266290274,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1709266290274,
+      "end": 1709266290274,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1709266290274,
+      "end": 1709266290274,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1709266290274,
+      "end": 1709266290274,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1709266290274,
+      "end": 1709266290274,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import \"@mdi/font/css/materialdesignicons.css\";\nimport \"vuetify/styles\";\nimport { createVuetify } from \"vuetify\";\nexport default defineNuxtPlugin((app) => {\n  const vuetify = createVuetify({\n    ssr: true\n  });\n  app.vueApp.use(vuetify);\n});\n",
+      "start": 1709266290274,
+      "end": 1709266290313,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/luca-alin/Desktop/ChatApp/chat-app/plugins/vuetify.ts"
+        ],
+        "sourcesContent": [
+          "import \"@mdi/font/css/materialdesignicons.css\";\n\nimport \"vuetify/styles\";\nimport {createVuetify} from \"vuetify\";\n\nexport default defineNuxtPlugin((app) => {\n    const vuetify = createVuetify({\n      ssr: true\n    });\n    app.vueApp.use(vuetify);\n});\n"
+        ],
+        "mappings": "AAAA,OAAO;AAEP,OAAO;AACP,SAAQ,qBAAoB;AAE5B,eAAe,iBAAiB,CAAC,QAAQ;AACrC,QAAM,UAAU,cAAc;AAAA,IAC5B,KAAK;AAAA,EACP,CAAC;AACD,MAAI,OAAO,IAAI,OAAO;AAC1B,CAAC;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1709266290313,
+      "end": 1709266290313,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1709266290313,
+      "end": 1709266290313,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1709266290313,
+      "end": 1709266290313,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1709266290313,
+      "end": 1709266290313,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709266290313,
+      "end": 1709266290313,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1709266290313,
+      "end": 1709266290314,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1709266290314,
+      "end": 1709266290314,
+      "order": "normal"
+    },
+    {
+      "name": "vuetify:import",
+      "start": 1709266290314,
+      "end": 1709266290314,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1709266290314,
+      "end": 1709266290314,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1709266290314,
+      "end": 1709266290314,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1709266290314,
+      "end": 1709266290314,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1709266290314,
+      "end": 1709266290314,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1709266290314,
+      "end": 1709266290314,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1709266290314,
+      "end": 1709266290314,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1709266290314,
+      "end": 1709266290314,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1709266290314,
+      "end": 1709266290314,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1709266290314,
+      "end": 1709266290314,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1709266290314,
+      "end": 1709266290314,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1709266290314,
+      "end": 1709266290314,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1709266290314,
+      "end": 1709266290314,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { defineNuxtPlugin } from '#app/nuxt';\nimport \"@mdi/font/css/materialdesignicons.css\";\nimport \"vuetify/styles\";\nimport { createVuetify } from \"vuetify\";\nexport default defineNuxtPlugin((app) => {\n  const vuetify = createVuetify({\n    ssr: true\n  });\n  app.vueApp.use(vuetify);\n});\n",
+      "start": 1709266290314,
+      "end": 1709266290315,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";AAAA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC/C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACb,CAAC,CAAC,CAAC,CAAC,CAAC;AACL,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1B,CAAC,CAAC,CAAC;"
+      }
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1709266290315,
+      "end": 1709266290315,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1709266290315,
+      "end": 1709266290315,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1709266290315,
+      "end": 1709266290315,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1709266290315,
+      "end": 1709266290315,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1709266290315,
+      "end": 1709266290315,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1709266290315,
+      "end": 1709266290315,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1709266290315,
+      "end": 1709266290315,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1709266290315,
+      "end": 1709266290315,
+      "order": "normal"
+    }
+  ]
+}
