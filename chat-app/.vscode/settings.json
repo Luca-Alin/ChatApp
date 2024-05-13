@@ -1,5 +1,0 @@
-{
-  "css.styleSheets": [
-    "node_modules/**/*.css",
-  ]
-}
